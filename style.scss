@@ -1,0 +1,371 @@
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*general*/
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+main {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+
+.header {
+  width: 80%;
+  height: auto;
+  background-color: pink;
+  position: relative;
+  margin: 20px auto;
+
+  &__logo {
+    float: left;
+    margin: 20px auto auto 30px;
+  }
+
+  &__menu {
+    float: right;
+    margin: 20px auto;
+    color: red;
+
+    ul {
+      display: inline-block;
+
+      li {
+        display: inline-block;
+
+        &:hover {
+          border: 1px black solid;
+          background-color: orange;
+          height: 30px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__card {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 50px 30px;
+
+    &__title {
+      font-weight: bold;
+    }
+
+    &__search-form {
+      background-color: white;
+      width: 90%;
+      margin: auto;
+      border-radius: 15px;
+      height: auto;
+    }
+  }
+
+  &__img {
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+  }
+}
+
+.presentation {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+
+  &__box {
+    height: 250px;
+    width: 250px;
+    border-radius: 15px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+}
+
+.services {
+  width: 80%;
+  margin: 60px auto;
+
+  &__title {
+    text-align: center;
+    margin: 0 auto 50px auto;
+  }
+
+  &__types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 95%;
+    height: auto;
+    margin: 0px auto;
+
+    &__box {
+      background-color: pink;
+      background-origin: 1px pink solid;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 300px;
+      height: 120px;
+      border-radius: 15px;
+      text-align: center;
+      margin: 20px auto;
+    }
+  }
+
+  &__btn {
+    margin: auto;
+    height: 60px;
+    width: 200px;
+    background-color: rgb(241, 138, 90);
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+  }
+}
+
+.agency {
+  background-color: grey;
+  height: 800px;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  &__title {
+    margin: 10px auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    width: 90%;
+    margin: auto;
+
+    &__img {
+      border-radius: 45px;
+      width: 500px;
+      height: 500px;
+      float: left;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__field {
+        width: 400px;
+        height: 60px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+
+        div {
+          float: right;
+
+          i {
+            color: rgb(241, 138, 90);
+          }
+        }
+      }
+
+      &:hover {
+        background-color: rgb(241, 138, 90);
+        color: white;
+      }
+    }
+  }
+}
+
+.enquiry {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  height: 500px;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    width: 80%;
+    float: left;
+    margin: auto;
+
+    &__title {
+      text-align: left;
+
+      span {
+        color: rgb(241, 138, 90);
+      }
+    }
+
+    &__btn {
+      width: 250px;
+      height: 60px;
+      border: 1px black solid;
+      border-radius: 15px;
+      cursor: pointer;
+      border: 1px black solid;
+      margin: auto;
+      color: white;
+      background-color: rgb(241, 138, 90);
+    }
+
+    &:hover {
+      background-color: rgb(61, 100, 54);
+    }
+  }
+
+  &__img {
+    float: right;
+  }
+}
+
+.search-form {
+  width: 70%;
+  background-color: grey;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  border-radius: 15px;
+
+  &__title {
+    margin: 50px auto;
+  }
+
+  &__input {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__field {
+      width: 120px;
+      height: 40px;
+      background-color: white;
+    }
+  }
+}
+
+.agencies {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 50px auto;
+
+  &__title {
+    margin: 50px auto 50px;
+  }
+
+  &__links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    &__card {
+      height: 250px;
+      width: 150px;
+      border: 1px black solid;
+      border-radius: 15px;
+
+      img {
+        width: 150px;
+        height: 250px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: rgba(56, 39, 39, 0.836);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  color: white;
+  margin: auto;
+
+  &__card {
+    margin: auto 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 30%;
+
+    &__logo {
+      margin: 60px auto;
+      font-size: 3em;
+    }
+
+    &__icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 25%;
+      margin: 30px auto 30px 0;
+      text-align: left;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    margin: 50px auto;
+    justify-content: space-between;
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      ul {
+        margin: auto 0;
+
+        li {
+          line-height: 40px;
+          margin: auto 0;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
