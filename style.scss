@@ -8,6 +8,7 @@ body {
 /*general*/
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul,
@@ -22,92 +23,175 @@ main {
 }
 
 .header {
-  width: 80%;
-  height: auto;
-  background-color: pink;
+  width: 75%;
+  height: 700px;
+  background-color: #fee1d9;
+  border-radius: 30px;
   position: relative;
-  margin: 20px auto;
+  margin: 50px auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "nav nav "
+    "title img"
+    "title img"
+    "search-form img"
+    "search-form img";
 
-  &__logo {
-    float: left;
-    margin: 20px auto auto 30px;
-  }
-
-  &__menu {
-    float: right;
+  &__nav {
+    width: 90%;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    grid-area: nav;
     margin: 20px auto;
-    color: red;
 
-    ul {
+    &__logo {
+      font-size: 2em;
+      margin: 20px auto auto 50px;
+    }
+
+    &__menu {
       display: inline-block;
 
       li {
         display: inline-block;
+        height: 30px;
+        margin: auto 15px;
+
+        a {
+          vertical-align: middle;
+        }
 
         &:hover {
-          border: 1px black solid;
-          background-color: orange;
-          height: 30px;
           color: white;
+          background-color: #fe5c4f;
         }
       }
     }
   }
 
-  &__card {
-    width: fit-content;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    margin: auto auto 50px 30px;
+  &__title {
+    grid-area: title;
+    margin: auto auto 10px 100px;
+    display: block;
 
-    &__title {
-      font-weight: bold;
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0;
     }
 
-    &__search-form {
-      background-color: white;
-      width: 90%;
-      margin: auto;
+    p {
+      font-size: 1.5em;
+    }
+  }
+
+  &__search-form {
+    margin: 0 auto auto 30px;
+    grid-area: search-form;
+    background-color: white;
+    height: 200px;
+    width: 450px;
+    border: 1px black white;
+    margin: 0 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    justify-content: center;
+
+    input {
+      height: 50px;
+      width: auto;
+      background-color: #f9f8f7;
+      margin: 20px auto auto 20px;
       border-radius: 15px;
-      height: auto;
+      border: 1px #f9f8f7 solid;
+    }
+
+    &__hashtags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: left;
+      grid-area: hashtags;
+      width: 70%;
+
+      li {
+        margin: auto 20px auto 0;
+        font-weight: bold;
+        color: grey;
+        cursor: pointer;
+      }
+    }
+
+    &__btn {
+      height: 50px;
+      width: 50px;
+      float: right;
+      background-color: #fe5c4f;
+      border-radius: 15px;
+      margin: auto;
+      cursor: pointer;
+
+      i {
+        color: white;
+        font-size: 1.5em;
+      }
     }
   }
 
   &__img {
-    width: 300px;
+    width: 450px;
     height: 500px;
     border-radius: 15px;
+    margin-right: 0;
+    grid-area: img;
   }
 }
 
+/*presentation*/
 .presentation {
-  width: 75%;
+  width: 60%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: auto;
+  margin: 50px auto;
 
   &__box {
-    height: 250px;
-    width: 250px;
+    height: 210px;
+    width: 200px;
     border-radius: 15px;
-    background-color: blue;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-evenly;
+    background-color: #d7effb;
+    display: inline-block;
+    padding: 10px;
+    line-height: 25px;
+
+    p {
+      font-weight: bold;
+    }
+
+    img {
+      float: right;
+      width: 100px;
+      height: 100px;
+    }
   }
 }
 
+/*services*/
 .services {
   width: 80%;
   margin: 60px auto;
+  text-align: center;
 
   &__title {
     text-align: center;
     margin: 0 auto 50px auto;
+    font-size: 2.5em;
   }
 
   &__types {
@@ -117,34 +201,47 @@ main {
     width: 95%;
     height: auto;
     margin: 0px auto;
+    justify-content: center;
 
     &__box {
-      background-color: pink;
-      background-origin: 1px pink solid;
+      background-color: #ffefee;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       width: 300px;
-      height: 120px;
+      height: 100px;
       border-radius: 15px;
       text-align: center;
-      margin: 20px auto;
+      margin: 20px 10px auto 10px;
+      cursor: pointer;
+
+      p {
+        margin: auto 10px;
+      }
+
+      img {
+        width: 100px;
+        height: 90px;
+        margin: auto 5px auto auto;
+      }
     }
   }
 
   &__btn {
-    margin: auto;
+    margin: 50px auto;
     height: 60px;
     width: 200px;
-    background-color: rgb(241, 138, 90);
+    background-color: #fe5c4f;
     color: white;
     text-align: center;
     border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
   }
 }
 
+/*agency*/
 .agency {
-  background-color: grey;
   height: 800px;
   width: 80%;
   text-align: center;
@@ -154,6 +251,7 @@ main {
 
   &__title {
     margin: 10px auto;
+    font-size: 2.5em;
   }
 
   &__card {
@@ -161,14 +259,15 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: auto;
+    height: 750px;
     width: 90%;
-    margin: auto;
+    margin: 50px auto;
+    background-color: #f9f8f7;
 
     &__img {
-      border-radius: 45px;
-      width: 500px;
-      height: 500px;
+      border-radius: 20px;
+      width: 590px;
+      height: 590px;
       float: left;
     }
 
@@ -176,36 +275,50 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 650px;
 
       &__field {
         width: 400px;
-        height: 60px;
+        height: 70px;
         background-color: white;
-        display: flex;
         flex-direction: row;
         cursor: pointer;
+        border-radius: 15px;
+        display: table;
+        margin: 10px auto;
+
+        p {
+          display: table-cell;
+          vertical-align: middle;
+          margin-right: 5px;
+          font-size: 1.2em;
+        }
 
         div {
-          float: right;
-
+          display: table-cell;
+          vertical-align: middle;
           i {
-            color: rgb(241, 138, 90);
+            color: #fe5c4f;
           }
         }
-      }
+        &:hover {
+          background-color: #fe5c4f;
+          color: white;
 
-      &:hover {
-        background-color: rgb(241, 138, 90);
-        color: white;
+          i {
+            color: white;
+          }
+        }
       }
     }
   }
 }
 
+/*enquiry*/
 .enquiry {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 70%;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 30px auto;
@@ -218,67 +331,88 @@ main {
     height: 500px;
     width: 80%;
     float: left;
-    margin: auto;
+    background-color: green;
 
     &__title {
       text-align: left;
+      margin: 150px auto 30px 100px;
+      font-size: 2.5em;
 
       span {
-        color: rgb(241, 138, 90);
+        color: #fe5c4f;
       }
+    }
+
+    &__text {
+      margin: auto auto 30px 100px;
     }
 
     &__btn {
       width: 250px;
       height: 60px;
-      border: 1px black solid;
       border-radius: 15px;
       cursor: pointer;
-      border: 1px black solid;
-      margin: auto;
+      margin: auto 100px;
       color: white;
-      background-color: rgb(241, 138, 90);
-    }
-
-    &:hover {
-      background-color: rgb(61, 100, 54);
+      background-color: #fe5c4f;
+      font-weight: bold;
     }
   }
 
   &__img {
     float: right;
+    width: 400px;
   }
 }
 
+/*search-form*/
 .search-form {
-  width: 70%;
-  background-color: grey;
+  width: 65%;
+  background-color: #f9f8f7;
   height: 300px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: auto;
-  border-radius: 15px;
+  margin: 50px auto;
+  border-radius: 45px;
 
   &__title {
     margin: 50px auto;
+    font-size: 2.5em;
   }
 
   &__input {
-    width: 75%;
-    margin: auto;
+    width: 50%;
+    margin: 30px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 
     &__field {
-      width: 120px;
-      height: 40px;
+      width: 200px;
+      height: 50px;
       background-color: white;
+      margin: auto;
+      border: 1px #f9f8f7 solid;
+    }
+
+    &__btn {
+      width: 50px;
+      height: 50px;
+      background-color: #fe5c4f;
+      border-radius: 15px;
+      margin: auto;
+
+      i {
+        color: white;
+        font-size: 1.5em;
+      }
     }
   }
 }
 
+/*agencies*/
 .agencies {
   display: flex;
   flex-direction: column;
@@ -287,6 +421,7 @@ main {
 
   &__title {
     margin: 50px auto 50px;
+    font-size: 2em;
   }
 
   &__links {
@@ -301,18 +436,25 @@ main {
       width: 150px;
       border: 1px black solid;
       border-radius: 15px;
+      position: relative;
 
       img {
         width: 150px;
         height: 250px;
         border-radius: 15px;
       }
+
+      div {
+        position: absolute;
+        z-index: 1;
+      }
     }
   }
 }
 
+/*footer*/
 .footer {
-  background-color: rgba(56, 39, 39, 0.836);
+  background-color: #343434;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -339,6 +481,18 @@ main {
       width: 25%;
       margin: 30px auto 30px 0;
       text-align: left;
+
+      .facebook i {
+        color: blue;
+      }
+
+      .instagram i {
+        color: red;
+      }
+
+      .linkedin {
+        color: white;
+      }
     }
   }
 
@@ -348,24 +502,143 @@ main {
     width: 65%;
     margin: 50px auto;
     justify-content: space-between;
+    text-align: center;
 
     &__card {
       display: flex;
       flex-direction: column;
       text-align: left;
+      margin: auto 0;
 
       ul {
-        margin: auto 0;
+        margin: auto;
+        padding: auto;
 
         li {
           line-height: 40px;
-          margin: auto 0;
+          margin: auto auto;
 
           a {
             color: white;
           }
         }
       }
+    }
+  }
+}
+
+/*max-width 1024px*/
+@media screen and (max-width: 1024px) {
+  /*header*/
+  .header {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &__title {
+      margin: auto;
+      width: 100%;
+    }
+
+    &__search-form {
+      margin: auto;
+    }
+
+    &__img {
+      margin: 20px auto;
+    }
+  }
+
+  /*presentation*/
+  .presentation {
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  /*services*/
+  .services {
+    width: 100%;
+  }
+
+  /*agency*/
+  .agency {
+    width: 95%;
+    height: 750px;
+
+    &__card {
+      width: 100%;
+
+      &__img {
+        width: 400px;
+        height: 500px;
+      }
+
+      &__links {
+        height: 550px;
+
+        &__field {
+          height: 60px;
+          width: 350px;
+        }
+      }
+    }
+  }
+
+  /*enquiry*/
+  .enquiry {
+    width: 95%;
+
+    &__card {
+      height: 300px;
+
+      &__title {
+        margin: 100px auto auto 50px;
+      }
+
+      &__text_ {
+        margin: 30px auto auto 50px;
+      }
+
+      &__btn {
+        margin: 30px auto auto 50px;
+      }
+    }
+  }
+
+  /*search-form*/
+  .search-form {
+    width: 90%;
+
+    &__input {
+      width: 90%;
+    }
+  }
+
+  /*agency*/
+  .agencies {
+    width: 100%;
+    margin: auto 0 auto 0;
+
+    &__links {
+      width: 80%;
+      height: 600px;
+      margin: auto;
+      &__card {
+        margin: auto 30px;
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    height: auto;
+
+    &__links {
+      flex-direction: column;
+      text-align: center;
     }
   }
 }

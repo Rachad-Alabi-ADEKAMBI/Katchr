@@ -8,6 +8,7 @@ body {
 /*general*/
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul,
@@ -22,93 +23,171 @@ main {
 }
 
 .header {
-  width: 80%;
-  height: auto;
-  background-color: pink;
+  width: 75%;
+  height: 700px;
+  background-color: #fee1d9;
+  border-radius: 30px;
   position: relative;
-  margin: 20px auto;
+  margin: 50px auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav " "title img" "title img" "search-form img" "search-form img";
 }
 
-.header__logo {
-  float: left;
-  margin: 20px auto auto 30px;
-}
-
-.header__menu {
-  float: right;
-  margin: 20px auto;
-  color: red;
-}
-
-.header__menu ul {
-  display: inline-block;
-}
-
-.header__menu ul li {
-  display: inline-block;
-}
-
-.header__menu ul li:hover {
-  border: 1px black solid;
-  background-color: orange;
-  height: 30px;
-  color: white;
-}
-
-.header__card {
-  width: fit-content;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  margin: auto auto 50px 30px;
-}
-
-.header__card__title {
-  font-weight: bold;
-}
-
-.header__card__search-form {
-  background-color: white;
+.header__nav {
   width: 90%;
-  margin: auto;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  grid-area: nav;
+  margin: 20px auto;
+}
+
+.header__nav__logo {
+  font-size: 2em;
+  margin: 20px auto auto 50px;
+}
+
+.header__nav__menu {
+  display: inline-block;
+}
+
+.header__nav__menu li {
+  display: inline-block;
+  height: 30px;
+  margin: auto 15px;
+}
+
+.header__nav__menu li a {
+  vertical-align: middle;
+}
+
+.header__nav__menu li:hover {
+  color: white;
+  background-color: #fe5c4f;
+}
+
+.header__title {
+  grid-area: title;
+  margin: auto auto 10px 100px;
+  display: block;
+}
+
+.header__title h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.header__title p {
+  font-size: 1.5em;
+}
+
+.header__search-form {
+  margin: 0 auto auto 30px;
+  grid-area: search-form;
+  background-color: white;
+  height: 200px;
+  width: 450px;
+  border: 1px black white;
+  margin: 0 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.header__search-form input {
+  height: 50px;
+  width: auto;
+  background-color: #f9f8f7;
+  margin: 20px auto auto 20px;
   border-radius: 15px;
-  height: auto;
+  border: 1px #f9f8f7 solid;
+}
+
+.header__search-form__hashtags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+  grid-area: hashtags;
+  width: 70%;
+}
+
+.header__search-form__hashtags li {
+  margin: auto 20px auto 0;
+  font-weight: bold;
+  color: grey;
+  cursor: pointer;
+}
+
+.header__search-form__btn {
+  height: 50px;
+  width: 50px;
+  float: right;
+  background-color: #fe5c4f;
+  border-radius: 15px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.header__search-form__btn i {
+  color: white;
+  font-size: 1.5em;
 }
 
 .header__img {
-  width: 300px;
+  width: 450px;
   height: 500px;
   border-radius: 15px;
+  margin-right: 0;
+  grid-area: img;
 }
 
+/*presentation*/
 .presentation {
-  width: 75%;
+  width: 60%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: auto;
+  margin: 50px auto;
 }
 
 .presentation__box {
-  height: 250px;
-  width: 250px;
+  height: 210px;
+  width: 200px;
   border-radius: 15px;
-  background-color: blue;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: space-evenly;
+  background-color: #d7effb;
+  display: inline-block;
+  padding: 10px;
+  line-height: 25px;
 }
 
+.presentation__box p {
+  font-weight: bold;
+}
+
+.presentation__box img {
+  float: right;
+  width: 100px;
+  height: 100px;
+}
+
+/*services*/
 .services {
   width: 80%;
   margin: 60px auto;
+  text-align: center;
 }
 
 .services__title {
   text-align: center;
   margin: 0 auto 50px auto;
+  font-size: 2.5em;
 }
 
 .services__types {
@@ -118,33 +197,46 @@ main {
   width: 95%;
   height: auto;
   margin: 0px auto;
+  justify-content: center;
 }
 
 .services__types__box {
-  background-color: pink;
-  background-origin: 1px pink solid;
+  background-color: #ffefee;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 300px;
-  height: 120px;
+  height: 100px;
   border-radius: 15px;
   text-align: center;
-  margin: 20px auto;
+  margin: 20px 10px auto 10px;
+  cursor: pointer;
+}
+
+.services__types__box p {
+  margin: auto 10px;
+}
+
+.services__types__box img {
+  width: 100px;
+  height: 90px;
+  margin: auto 5px auto auto;
 }
 
 .services__btn {
-  margin: auto;
+  margin: 50px auto;
   height: 60px;
   width: 200px;
-  background-color: #f18a5a;
+  background-color: #fe5c4f;
   color: white;
   text-align: center;
   border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
+/*agency*/
 .agency {
-  background-color: grey;
   height: 800px;
   width: 80%;
   text-align: center;
@@ -155,6 +247,7 @@ main {
 
 .agency__title {
   margin: 10px auto;
+  font-size: 2.5em;
 }
 
 .agency__card {
@@ -162,15 +255,16 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  height: auto;
+  height: 750px;
   width: 90%;
-  margin: auto;
+  margin: 50px auto;
+  background-color: #f9f8f7;
 }
 
 .agency__card__img {
-  border-radius: 45px;
-  width: 500px;
-  height: 500px;
+  border-radius: 20px;
+  width: 590px;
+  height: 590px;
   float: left;
 }
 
@@ -178,34 +272,50 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 650px;
 }
 
 .agency__card__links__field {
   width: 400px;
-  height: 60px;
+  height: 70px;
   background-color: white;
-  display: flex;
   flex-direction: row;
   cursor: pointer;
+  border-radius: 15px;
+  display: table;
+  margin: 10px auto;
+}
+
+.agency__card__links__field p {
+  display: table-cell;
+  vertical-align: middle;
+  margin-right: 5px;
+  font-size: 1.2em;
 }
 
 .agency__card__links__field div {
-  float: right;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .agency__card__links__field div i {
-  color: #f18a5a;
+  color: #fe5c4f;
 }
 
-.agency__card__links:hover {
-  background-color: #f18a5a;
+.agency__card__links__field:hover {
+  background-color: #fe5c4f;
   color: white;
 }
 
+.agency__card__links__field:hover i {
+  color: white;
+}
+
+/*enquiry*/
 .enquiry {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 70%;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 30px auto;
@@ -219,66 +329,87 @@ main {
   height: 500px;
   width: 80%;
   float: left;
-  margin: auto;
+  background-color: green;
 }
 
 .enquiry__card__title {
   text-align: left;
+  margin: 150px auto 30px 100px;
+  font-size: 2.5em;
 }
 
 .enquiry__card__title span {
-  color: #f18a5a;
+  color: #fe5c4f;
+}
+
+.enquiry__card__text {
+  margin: auto auto 30px 100px;
 }
 
 .enquiry__card__btn {
   width: 250px;
   height: 60px;
-  border: 1px black solid;
   border-radius: 15px;
   cursor: pointer;
-  border: 1px black solid;
-  margin: auto;
+  margin: auto 100px;
   color: white;
-  background-color: #f18a5a;
-}
-
-.enquiry__card:hover {
-  background-color: #3d6436;
+  background-color: #fe5c4f;
+  font-weight: bold;
 }
 
 .enquiry__img {
   float: right;
+  width: 400px;
 }
 
+/*search-form*/
 .search-form {
-  width: 70%;
-  background-color: grey;
+  width: 65%;
+  background-color: #f9f8f7;
   height: 300px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: auto;
-  border-radius: 15px;
+  margin: 50px auto;
+  border-radius: 45px;
 }
 
 .search-form__title {
   margin: 50px auto;
+  font-size: 2.5em;
 }
 
 .search-form__input {
-  width: 75%;
-  margin: auto;
+  width: 50%;
+  margin: 30px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search-form__input__field {
-  width: 120px;
-  height: 40px;
+  width: 200px;
+  height: 50px;
   background-color: white;
+  margin: auto;
+  border: 1px #f9f8f7 solid;
 }
 
+.search-form__input__btn {
+  width: 50px;
+  height: 50px;
+  background-color: #fe5c4f;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.search-form__input__btn i {
+  color: white;
+  font-size: 1.5em;
+}
+
+/*agencies*/
 .agencies {
   display: flex;
   flex-direction: column;
@@ -288,6 +419,7 @@ main {
 
 .agencies__title {
   margin: 50px auto 50px;
+  font-size: 2em;
 }
 
 .agencies__links {
@@ -303,6 +435,7 @@ main {
   width: 150px;
   border: 1px black solid;
   border-radius: 15px;
+  position: relative;
 }
 
 .agencies__links__card img {
@@ -311,8 +444,14 @@ main {
   border-radius: 15px;
 }
 
+.agencies__links__card div {
+  position: absolute;
+  z-index: 1;
+}
+
+/*footer*/
 .footer {
-  background-color: rgba(56, 39, 39, 0.836);
+  background-color: #343434;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -343,29 +482,139 @@ main {
   text-align: left;
 }
 
+.footer__card__icons .facebook i {
+  color: blue;
+}
+
+.footer__card__icons .instagram i {
+  color: red;
+}
+
+.footer__card__icons .linkedin {
+  color: white;
+}
+
 .footer__links {
   display: flex;
   flex-direction: row;
   width: 65%;
   margin: 50px auto;
   justify-content: space-between;
+  text-align: center;
 }
 
 .footer__links__card {
   display: flex;
   flex-direction: column;
   text-align: left;
+  margin: auto 0;
 }
 
 .footer__links__card ul {
-  margin: auto 0;
+  margin: auto;
+  padding: auto;
 }
 
 .footer__links__card ul li {
   line-height: 40px;
-  margin: auto 0;
+  margin: auto auto;
 }
 
 .footer__links__card ul li a {
   color: white;
+}
+
+/*max-width 1024px*/
+@media screen and (max-width: 1024px) {
+  /*header*/
+  .header {
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .header__title {
+    margin: auto;
+    width: 100%;
+  }
+  .header__search-form {
+    margin: auto;
+  }
+  .header__img {
+    margin: 20px auto;
+  }
+  /*presentation*/
+  .presentation {
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+  }
+  /*services*/
+  .services {
+    width: 100%;
+  }
+  /*agency*/
+  .agency {
+    width: 95%;
+    height: 750px;
+  }
+  .agency__card {
+    width: 100%;
+  }
+  .agency__card__img {
+    width: 400px;
+    height: 500px;
+  }
+  .agency__card__links {
+    height: 550px;
+  }
+  .agency__card__links__field {
+    height: 60px;
+    width: 350px;
+  }
+  /*enquiry*/
+  .enquiry {
+    width: 95%;
+  }
+  .enquiry__card {
+    height: 300px;
+  }
+  .enquiry__card__title {
+    margin: 100px auto auto 50px;
+  }
+  .enquiry__card__text_ {
+    margin: 30px auto auto 50px;
+  }
+  .enquiry__card__btn {
+    margin: 30px auto auto 50px;
+  }
+  /*search-form*/
+  .search-form {
+    width: 90%;
+  }
+  .search-form__input {
+    width: 90%;
+  }
+  /*agency*/
+  .agencies {
+    width: 100%;
+    margin: auto 0 auto 0;
+  }
+  .agencies__links {
+    width: 80%;
+    height: 600px;
+    margin: auto;
+  }
+  .agencies__links__card {
+    margin: auto 30px;
+  }
+  .footer {
+    width: 100%;
+    height: auto;
+  }
+  .footer__links {
+    flex-direction: column;
+    text-align: center;
+  }
 }
