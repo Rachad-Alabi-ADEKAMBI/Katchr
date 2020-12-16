@@ -22,6 +22,7 @@ main {
   margin: auto;
 }
 
+/*header*/
 .header {
   width: 75%;
   height: 700px;
@@ -29,7 +30,6 @@ main {
   border-radius: 30px;
   position: relative;
   margin: 50px auto;
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -45,6 +45,14 @@ main {
   margin: 20px auto;
 }
 
+.header__nav label i {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+}
+
 .header__nav__logo {
   width: 130px;
   height: 80px;
@@ -52,7 +60,6 @@ main {
 }
 
 .header__nav__menu {
-  display: inline-block;
   margin: 30px 0 auto auto;
 }
 
@@ -60,20 +67,21 @@ main {
   display: inline-block;
   margin: auto 15px;
   cursor: pointer;
-  border-radius: 15px;
 }
 
 .header__nav__menu li a {
   margin: auto;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 7px 13px;
 }
 
-.header__nav__menu li:hover {
+.header__nav__menu li a.active,
+.header__nav__menu li a:hover {
   color: white;
+  transition: 0.5s;
   background-color: #fe5c4f;
-}
-
-.header__nav__menu li:hover a {
-  color: white;
+  transition: 0.5s;
 }
 
 .header__title {
@@ -492,14 +500,17 @@ main {
 
 .footer__links__icons .facebook i {
   color: blue;
+  margin-right: 20px;
 }
 
 .footer__links__icons .instagram i {
   color: red;
+  margin-right: 20px;
 }
 
 .footer__links__icons .linkedin i {
   color: white;
+  margin-right: 20px;
 }
 
 .footer__links__copyright {
@@ -525,6 +536,9 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
+  }
+  .header__nav__menu {
+    display: none;
   }
   .header__title {
     margin: auto;
@@ -689,6 +703,7 @@ main {
     flex-direction: column;
     height: auto;
     width: 90%;
+    margin: 20px auto;
   }
   .header__nav {
     display: none;
