@@ -46,27 +46,34 @@ main {
 }
 
 .header__nav__logo {
-  font-size: 2em;
-  margin: 20px auto auto 50px;
+  width: 130px;
+  height: 80px;
+  float: left;
 }
 
 .header__nav__menu {
   display: inline-block;
+  margin: 30px 0 auto auto;
 }
 
 .header__nav__menu li {
   display: inline-block;
-  height: 30px;
   margin: auto 15px;
+  cursor: pointer;
+  border-radius: 15px;
 }
 
 .header__nav__menu li a {
-  vertical-align: middle;
+  margin: auto;
 }
 
 .header__nav__menu li:hover {
   color: white;
   background-color: #fe5c4f;
+}
+
+.header__nav__menu li:hover a {
+  color: white;
 }
 
 .header__title {
@@ -456,71 +463,56 @@ main {
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+  height: 400px;
   color: white;
   margin: auto;
-}
-
-.footer__card {
-  margin: auto 50px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: 30%;
-}
-
-.footer__card__logo {
-  margin: 60px auto;
-  font-size: 3em;
-}
-
-.footer__card__icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 25%;
-  margin: 30px auto 30px 0;
-  text-align: left;
-}
-
-.footer__card__icons .facebook i {
-  color: blue;
-}
-
-.footer__card__icons .instagram i {
-  color: red;
-}
-
-.footer__card__icons .linkedin {
-  color: white;
 }
 
 .footer__links {
-  display: flex;
-  flex-direction: row;
-  width: 65%;
-  margin: 50px auto;
-  justify-content: space-between;
-  text-align: center;
-}
-
-.footer__links__card {
-  display: flex;
   flex-direction: column;
-  text-align: left;
-  margin: auto 0;
+  display: flex;
+  width: 30%;
 }
 
-.footer__links__card ul {
-  margin: auto;
-  padding: auto;
+.footer__links__logo {
+  margin: 100px auto 0 80px;
+  width: 220px;
+  height: 80px;
 }
 
-.footer__links__card ul li {
+.footer__links__adress {
+  margin: 30px auto;
+}
+
+.footer__links__icons {
+  width: 50%;
+  margin: 30px auto;
+  padding-right: 10px;
+}
+
+.footer__links__icons .facebook i {
+  color: blue;
+}
+
+.footer__links__icons .instagram i {
+  color: red;
+}
+
+.footer__links__icons .linkedin i {
+  color: white;
+}
+
+.footer__links__copyright {
+  margin: 30px auto auto 100px;
+}
+
+.footer__about, .footer__infos, .footer__search {
+  width: 15%;
+  margin: 50px auto;
   line-height: 40px;
-  margin: auto auto;
 }
 
-.footer__links__card ul li a {
+.footer__about li a, .footer__infos li a, .footer__search li a {
   color: white;
 }
 
@@ -612,9 +604,133 @@ main {
   .footer {
     width: 100%;
     height: auto;
+    flex-direction: column;
   }
   .footer__links {
     flex-direction: column;
     text-align: center;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+  }
+  .footer__links__logo, .footer__links__adress, .footer__links__icons, .footer__links__copyright {
+    margin: auto;
+  }
+  .footer__about, .footer__infos, .footer__search {
+    margin: auto;
+    width: 45%;
+  }
+}
+
+/*max-width 768px*/
+@media screen and (max-width: 768px) {
+  .presentation__box {
+    margin: 10px auto;
+  }
+  /*services*/
+  .services__types__box {
+    width: 250px;
+  }
+  /*agency*/
+  .agency {
+    height: auto;
+  }
+  .agency__card {
+    flex-direction: column;
+    height: auto;
+  }
+  .agency__card__img {
+    margin: 20px auto;
+  }
+  /*enquiry*/
+  .enquiry {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 70%;
+  }
+  .enquiry__card {
+    height: auto;
+    float: none;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+  }
+  .enquiry__card__title {
+    margin: 30px auto;
+    text-align: center;
+  }
+  .enquiry__card__text {
+    margin-right: auto;
+  }
+  .enquiry__card__btn {
+    margin: auto;
+  }
+  .enquiry__card__img {
+    margin: 10px auto;
+  }
+  /*agencies*/
+  .agencies__links {
+    width: 100%;
+    height: auto;
+  }
+  .agencies__links__card {
+    margin: 10px;
+  }
+}
+
+/*max-width 576px*/
+@media screen and (max-width: 576px) {
+  /*header*/
+  main {
+    width: 100%;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__title {
+    width: 90%;
+    margin-top: auto;
+  }
+  .header__search-form {
+    width: 300px;
+    margin: auto;
+  }
+  .header__search-form input {
+    width: 120px;
+  }
+  .header__search-form__hashtags li {
+    margin: auto 0;
+  }
+  .header__img {
+    width: 300px;
+    height: 450px;
+    margin: 20px auto;
+  }
+  /*agency*/
+  .agency {
+    margin: auto;
+  }
+  .agency__card__img {
+    width: 300px;
+    height: 410px;
+  }
+  .agency__card__links__field {
+    width: 300px;
+  }
+  /*enquiry*/
+  .enquiry__img {
+    float: none;
+    margin: auto;
+    width: 300px;
+  }
+  /*search-form*/
+  .search-form__input__field {
+    width: 100px;
   }
 }
