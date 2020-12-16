@@ -49,25 +49,32 @@ main {
     margin: 20px auto;
 
     &__logo {
-      font-size: 2em;
-      margin: 20px auto auto 50px;
+      width: 130px;
+      height: 80px;
+      float: left;
     }
 
     &__menu {
       display: inline-block;
+      margin: 30px 0 auto auto;
 
       li {
         display: inline-block;
-        height: 30px;
         margin: auto 15px;
+        cursor: pointer;
+        border-radius: 15px;
 
         a {
-          vertical-align: middle;
+          margin: auto;
         }
 
         &:hover {
           color: white;
           background-color: #fe5c4f;
+
+          a {
+            color: white;
+          }
         }
       }
     }
@@ -459,28 +466,29 @@ main {
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+  height: 400px;
   color: white;
   margin: auto;
 
-  &__card {
-    margin: auto 50px;
-    display: flex;
+  &__links {
     flex-direction: column;
-    text-align: left;
+    display: flex;
     width: 30%;
 
     &__logo {
-      margin: 60px auto;
-      font-size: 3em;
+      margin: 100px auto 0 80px;
+      width: 220px;
+      height: 80px;
+    }
+
+    &__adress {
+      margin: 30px auto;
     }
 
     &__icons {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 25%;
-      margin: 30px auto 30px 0;
-      text-align: left;
+      width: 50%;
+      margin: 30px auto;
+      padding-right: 10px;
 
       .facebook i {
         color: blue;
@@ -490,38 +498,26 @@ main {
         color: red;
       }
 
-      .linkedin {
+      .linkedin i {
         color: white;
       }
     }
+
+    &__copyright {
+      margin: 30px auto auto 100px;
+    }
   }
 
-  &__links {
-    display: flex;
-    flex-direction: row;
-    width: 65%;
+  &__about,
+  &__infos,
+  &__search {
+    width: 15%;
     margin: 50px auto;
-    justify-content: space-between;
-    text-align: center;
+    line-height: 40px;
 
-    &__card {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      margin: auto 0;
-
-      ul {
-        margin: auto;
-        padding: auto;
-
-        li {
-          line-height: 40px;
-          margin: auto auto;
-
-          a {
-            color: white;
-          }
-        }
+    li {
+      a {
+        color: white;
       }
     }
   }
@@ -635,10 +631,183 @@ main {
   .footer {
     width: 100%;
     height: auto;
+    flex-direction: column;
 
     &__links {
       flex-direction: column;
       text-align: center;
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+
+      &__logo,
+      &__adress,
+      &__icons,
+      &__copyright {
+        margin: auto;
+      }
+    }
+
+    &__about,
+    &__infos,
+    &__search {
+      margin: auto;
+      width: 45%;
+    }
+  }
+}
+
+/*max-width 768px*/
+@media screen and (max-width: 768px) {
+  .presentation {
+    &__box {
+      margin: 10px auto;
+    }
+  }
+
+  /*services*/
+  .services {
+    &__types {
+      &__box {
+        width: 250px;
+      }
+    }
+  }
+  /*agency*/
+  .agency {
+    height: auto;
+
+    &__card {
+      flex-direction: column;
+      height: auto;
+
+      &__img {
+        margin: 20px auto;
+      }
+    }
+  }
+
+  /*enquiry*/
+  .enquiry {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 70%;
+
+    &__card {
+      height: auto;
+      float: none;
+      margin: auto;
+      text-align: center;
+      width: 50%;
+
+      &__title {
+        margin: 30px auto;
+        text-align: center;
+      }
+
+      &__text {
+        margin-right: auto;
+      }
+
+      &__btn {
+        margin: auto;
+      }
+
+      &__img {
+        margin: 10px auto;
+      }
+    }
+  }
+
+  /*agencies*/
+  .agencies {
+    &__links {
+      width: 100%;
+      height: auto;
+
+      &__card {
+        margin: 10px;
+      }
+    }
+  }
+}
+
+/*max-width 576px*/
+@media screen and (max-width: 576px) {
+  /*header*/
+
+  main {
+    width: 100%;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+
+    &__nav {
+      display: none;
+    }
+
+    &__title {
+      width: 90%;
+      margin-top: auto;
+    }
+
+    &__search-form {
+      width: 300px;
+      margin: auto;
+
+      input {
+        width: 120px;
+      }
+
+      &__hashtags {
+        li {
+          margin: auto 0;
+        }
+      }
+    }
+
+    &__img {
+      width: 300px;
+      height: 450px;
+      margin: 20px auto;
+    }
+  }
+
+  /*agency*/
+  .agency {
+    margin: auto;
+    &__card {
+      &__img {
+        width: 300px;
+        height: 410px;
+      }
+
+      &__links {
+        &__field {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  /*enquiry*/
+  .enquiry {
+    &__img {
+      float: none;
+      margin: auto;
+      width: 300px;
+    }
+  }
+
+  /*search-form*/
+  .search-form {
+    &__input {
+      &__field {
+        width: 100px;
+      }
     }
   }
 }
