@@ -22,6 +22,7 @@ main {
   margin: auto;
 }
 
+/*header*/
 .header {
   width: 75%;
   height: 700px;
@@ -29,7 +30,6 @@ main {
   border-radius: 30px;
   position: relative;
   margin: 50px auto;
-  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -48,6 +48,14 @@ main {
     grid-area: nav;
     margin: 20px auto;
 
+    label i {
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+    }
+
     &__logo {
       width: 130px;
       height: 80px;
@@ -55,26 +63,25 @@ main {
     }
 
     &__menu {
-      display: inline-block;
       margin: 30px 0 auto auto;
 
       li {
         display: inline-block;
         margin: auto 15px;
         cursor: pointer;
-        border-radius: 15px;
 
         a {
           margin: auto;
+          border-radius: 5px;
+          font-size: 17px;
+          padding: 7px 13px;
         }
-
-        &:hover {
+        a.active,
+        a:hover {
           color: white;
+          transition: 0.5s;
           background-color: #fe5c4f;
-
-          a {
-            color: white;
-          }
+          transition: 0.5s;
         }
       }
     }
@@ -492,14 +499,17 @@ main {
 
       .facebook i {
         color: blue;
+        margin-right: 20px;
       }
 
       .instagram i {
         color: red;
+        margin-right: 20px;
       }
 
       .linkedin i {
         color: white;
+        margin-right: 20px;
       }
     }
 
@@ -532,6 +542,12 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
+
+    &__nav {
+      &__menu {
+        display: none;
+      }
+    }
 
     &__title {
       margin: auto;
@@ -744,6 +760,7 @@ main {
     flex-direction: column;
     height: auto;
     width: 90%;
+    margin: 20px auto;
 
     &__nav {
       display: none;
