@@ -130,7 +130,6 @@ main {
       flex-direction: row;
       flex-wrap: wrap;
       text-align: left;
-      grid-area: hashtags;
       width: 70%;
 
       li {
@@ -445,12 +444,42 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
 
+    .paris {
+      background: url("ressources/34297bc08c40c85386e6e0496e85e687");
+      background-size: cover;
+    }
+
+    .lyon {
+      background: url("ressources/5e95c4c7fb50ddfd271c54e63f565b4e");
+      background-size: cover;
+    }
+
+    .nice {
+      background: url("ressources/1c6c8e18f691900d46432c7a8d7ff68f");
+      background-size: cover;
+    }
+
+    .caen {
+      background: url("ressources/9290084f7791a15b4cc8248d1d7d4271");
+      background-size: cover;
+    }
+
+    .grenobles {
+      background: url("ressources/5ef938a3a3f2a397d4ddf8e03fcbc971");
+      background-size: cover;
+    }
+
+    .rennes {
+      background: url("ressources/20e80c1f06cae02c312e7fbbe207e7a8");
+      background-size: cover;
+    }
+
     &__card {
       height: 250px;
       width: 150px;
-      border: 1px black solid;
+      border: 1px rgb(46, 38, 38) solid;
       border-radius: 15px;
-      position: relative;
+      text-align: center;
 
       img {
         width: 150px;
@@ -458,9 +487,11 @@ main {
         border-radius: 15px;
       }
 
-      div {
-        position: absolute;
-        z-index: 1;
+      p {
+        margin: 215px auto 10px auto;
+        font-size: 1.25em;
+        color: white;
+        font-weight: bold;
       }
     }
   }
@@ -623,21 +654,32 @@ main {
   /*search-form*/
   .search-form {
     width: 90%;
+    &__title {
+      font-size: 2.2em;
+    }
 
     &__input {
       width: 90%;
     }
   }
 
-  /*agency*/
+  /*agencies*/
   .agencies {
     width: 100%;
     margin: auto 0 auto 0;
+    text-align: center;
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      width: 75%;
+    }
 
     &__links {
       width: 80%;
       height: 600px;
       margin: auto;
+
       &__card {
         margin: auto 30px;
       }
